@@ -7,7 +7,7 @@ contributors:
     - ["Pat Myron" , "https://github.com/patmyron"]
     - ["Divay Prakash", "https://github.com/divayprakash"]
 translators:
-    - ["Marcos Andre Leao", "https://github.com/maleaomm"]
+    - ["Marcos Andre Leão", "https://github.com/maleaomm"]
 lang: pt-br
 ---
 
@@ -49,33 +49,34 @@ que oferece uma interface de usuário excelente.
 
 #### Desvantagens
 
-* It is an agent-less tool - every agent consumes up to 16MB ram - in some
-environments, it may be noticeable amount.
-* It is agent-less - you have to verify your environment consistency
-'on-demand' - there is no built-in mechanism that would warn you about some
-change automatically (this can be achieved with reasonable effort)
-* Official GUI - Ansible Tower - is great but expensive.
-* There is no 'small enterprise' payment plan, however Ansible AWX is the free
-open source version we were all waiting for.
+* É uma ferramenta sem agente - cada agente consome até 16 MB de RAM - em alguns
+ambientes, pode ser uma quantidade perceptível.
+* É sem agente - você precisa verificar a consistência do seu ambiente 'sob
+demanda' - não há nenhum mecanismo integrado que o avise sobre alguma alteração
+automaticamente (isso pode ser obtido com um esforço razoável)
+* GUI oficial - Ansible Tower - é ótimo, mas caro.
+* Não existe um plano de pagamento para 'pequenas empresas', no entanto, o
+Ansible AWX é a versão de código aberto gratuita que todos esperávamos.
 
-#### Neutral
+#### Neutro
 
-Migration - Ansible <-> Salt is fairly easy - so if you would need an
-event-driven agent environment - it would be a good choice to start quick with
-Ansible, and convert to Salt when needed.
+Migração - Ansible <-> Salt é bastante fácil - portanto, se você precisar de um
+ambiente de agente orientado a eventos - seria uma boa opção começar rapidamente
+com Ansible e converter para Salt quando necessário.
 
-#### Some concepts
+#### Alguns conceitos
 
-Ansible uses ssh or paramiko as a transport layer. In a way you can imagine
-that you are using a ssh with API to perform your action. The simplest way is
-to execute remote command in more controlled way (still using ssh).
-On the other hand - in advanced scope - you can wrap Ansible (use python Ansible
-code as a library) with your own Python scripts! It would act a
-bit like Fabric then.
+O Ansible usa ssh ou paramiko como camada de transporte. De certa forma você
+pode imaginar que está usando um ssh com API para executar sua ação. A maneira
+mais simples é executar o comando remoto de forma mais controlada (ainda usando
+ssh).
+Por outro lado - em escopo avançado - você pode agrupar o Ansible (use o código
+python Ansible como uma biblioteca) com seus próprios scripts Python!
+Funcionaria um pouco como o Fabric então.
 
-## Example
+## Exemplo
 
-An example playbook to install apache and configure log level
+Um playbook de exemplo para instalar o apache e configurar o nível de log
 
 ```yaml
 ---
@@ -138,7 +139,7 @@ An example playbook to install apache and configure log level
 ...
 ```
 
-## Installation
+## Instalação
 
 ```bash
 # Universal way
@@ -151,7 +152,7 @@ $ apt-get install ansible
 * [Appendix A - How do I install ansible](#infrastructure-as-a-code)
 * [Additional Reading.](http://docs.ansible.com/ansible/latest/intro_installation.html)
 
-### Your first ansible command (shell execution)
+### Seu primeiro comando ansible (execução shell)
 
 ```bash
 # Command pings localhost (defined in default inventory: /etc/ansible/hosts)
@@ -163,27 +164,26 @@ localhost | SUCCESS => {
 }
 ```
 
-### Shell Commands
+### Comandos Shell
 
-There are few commands you should know about
+Existem alguns comandos que você deve conhecer
 
-* `ansible` (to run modules in CLI)
-* `ansible-playbook` (to run playbooks)
-* `ansible-vault` (to manage secrets)
-* `ansible-galaxy` (to install roles from github/galaxy)
+* `ansible` (para executar módulos na CLI)
+* `ansible-playbook` (para executar playbooks)
+* `ansible-vault` (para gerenciar secrets)
+* `ansible-galaxy` (para instalar funções do github/galaxy)
 
-### Module
+### Módulo
 
-A program (usually python) that executes, does some work and returns proper
-JSON output. This program performs specialized task/action (like manage
-instances in the cloud, execute shell command). The simplest module is called
-`ping` - it just returns a JSON with `pong` message.
+Um programa (geralmente python) que executa, faz algum trabalho e retorna a
+saída JSON apropriada. Este programa executa tarefas/ações especializadas (como
+gerenciar instâncias na nuvem, executar comandos shell). O módulo mais simples é
+chamado de `ping` - apenas retorna um JSON com a mensagem `pong`.
 
-Example of modules:
+Exemplo de módulos:
 
-* Module: `ping` - the simplest module that is useful to verify host connectivity
-* Module: `shell` - a module that executes a shell command on a specified host(s).
-
+* Módulo: `ping` - o módulo mais simples e útil para verificar a conectividade do host
+* Módulo: `shell` - um módulo que executa um comando shell em um host especificado.
 
 ```bash
 $ ansible -m ping all
